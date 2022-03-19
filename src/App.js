@@ -7,19 +7,16 @@ import ProductList from "./ProductList";
 export default class App extends Component {
   state = {
     currentCategory: "",
-    products:[]
-  }
-  componentDidMount(){
-    this.getProducts();
+    products: []
   }
   changeCategory = (category) => {
     this.setState({ currentCategory: category.categoryName });
   }
-  getProducts = ()=>{
+  getProducts = () => {
     fetch("http://localhost:3000/products")
-    .then(response=>response.json())
-    .then(data=>this.setState({products:data}));
-}
+      .then(response => response.json())
+      .then(data => this.setState({ products: data }));
+  }
   render() {
     let productInfo = {
       title: "Product List"
