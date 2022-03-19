@@ -9,20 +9,21 @@ export default class App extends Component {
     currentCategory: "",
     products: []
   }
-  componentDidMount(){
+  componentDidMount() {
     this.getProducts();
   }
   changeCategory = (category) => {
     this.setState({ currentCategory: category.categoryName });
+    this.getProducts(category.id);
   }
   getProducts = (seoUrl) => {
     let url = "http://localhost:3000/products";
-    if(seoUrl){
-      url+="/"+seoUrl
+    if (seoUrl) {
+      url += "?categoryId=" + seoUrl
     }
     fetch(url)
       .then(response => response.json())
-      .then(data =>this.setState({ products: data }));
+      .then(data => this.setState({ products: data }));
   }
   render() {
     let productInfo = {
@@ -40,10 +41,16 @@ export default class App extends Component {
           </Row>
           <Row>
             <Col xs="3">
-              <CategoryList currentCategory={this.state.currentCategory} changeCategory={this.changeCategory} info={categoryInfo} />
+              <CategoryList
+                currentCategory={this.state.currentCategory}
+                changeCategory={this.changeCategory}
+                info={categoryInfo} />
             </Col>
             <Col xs="9">
-              <ProductList products={this.state.products} currentCategory={this.state.currentCategory} info={productInfo} />
+              <ProductList
+                products={this.state.products}
+                currentCategory={this.state.currentCategory}
+                info={productInfo} />
             </Col>
           </Row>
         </Container>
