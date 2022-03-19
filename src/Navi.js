@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar, NavbarToggler, Collapse, Nav, NavItem, NavLink, NavbarText, NavbarBrand, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap"
+import { Nav,Navbar,DropdownMenu, NavbarToggler, Collapse, NavItem, NavLink, NavbarText, NavbarBrand, UncontrolledDropdown, DropdownToggle, DropdownItem } from "reactstrap"
 
 export default class Navi extends Component {
     render() {
