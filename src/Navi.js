@@ -45,7 +45,7 @@ export default class Navi extends Component {
                                     caret
                                     nav
                                 >
-                                    Options
+                                    Sepetim <Badge color='info'>{this.props.carts.length}</Badge>
                                 </DropdownToggle>
                                 <DropdownMenu right>
                                     {
