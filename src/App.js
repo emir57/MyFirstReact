@@ -15,8 +15,12 @@ export default class App extends Component {
   changeCategory = (category) => {
     this.setState({ currentCategory: category.categoryName });
   }
-  getProducts = () => {
-    fetch("http://localhost:3000/products")
+  getProducts = (seoUrl) => {
+    let url = "http://localhost:3000/products";
+    if(seoUrl){
+      url+="/"+seoUrl
+    }
+    fetch(url)
       .then(response => response.json())
       .then(data =>this.setState({ products: data }));
   }
