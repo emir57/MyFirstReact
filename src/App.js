@@ -12,8 +12,13 @@ export default class App extends Component {
   }
   addToCart = (product) => {
     let newCard = this.state.carts;
-    //var addedItem = newCard.find(x=>x.product.id === product.id);
-    newCard.push({ product: product, quantity: 1 });
+    var addedItem = newCard.find(x => x.product.id === product.id);
+    if (addedItem) {
+      addedItem.quantity = addedItem.quantity + 1
+    } else {
+      newCard.push({ product: product, quantity: 1 });
+    }
+
     this.setState({ carts: newCard });
   }
   componentDidMount() {
@@ -44,7 +49,7 @@ export default class App extends Component {
       <div>
         <Container>
           {/* <Row className="mb-2"> */}
-          <Navi carts={this.state.carts}/>
+          <Navi carts={this.state.carts} />
           {/* </Row> */}
           <Row>
             <Col xs="3">
