@@ -5,6 +5,9 @@ import Navi from "./Navi";
 import ProductList from "./ProductList";
 
 export default class App extends Component {
+  state = {
+    currentCategory: ""
+  }
   changeCategory = (category) => {
     this.setState({ currentCategory: category.categoryName });
   }
