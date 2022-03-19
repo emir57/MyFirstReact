@@ -51,7 +51,7 @@ export default class Navi extends Component {
                                     {
                                         this.props.carts.length > 0 ?
                                             this.props.carts.map(cart => {
-                                                return <DropdownItem>
+                                                return <DropdownItem key={cart.product.id}>
                                                     {cart.product.productName} <Badge color='primary'>{cart.quantity}</Badge>
                                                 </DropdownItem>
                                             }):
