@@ -11,6 +11,7 @@ export default class Navi extends Component {
                     fixed=""
                     full
                     light
+                    className='mb-3'
                 >
                     <NavbarBrand href="/">
                         reactstrap
