@@ -36,9 +36,9 @@ export default class App extends Component {
     return (
       <div>
         <Container>
-          <Row className="mb-2">
+          {/* <Row className="mb-2"> */}
             <Navi />
-          </Row>
+          {/* </Row> */}
           <Row>
             <Col xs="3">
               <CategoryList
