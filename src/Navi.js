@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Nav,Navbar,DropdownMenu, NavbarToggler, Collapse, NavItem, NavLink, NavbarText, NavbarBrand, DropdownItem,UncontrolledDropdown,DropdownToggle } from "reactstrap"
+import { Nav, Navbar, DropdownMenu, NavbarToggler, Collapse, NavItem, NavLink, NavbarText, NavbarBrand, DropdownItem, UncontrolledDropdown, DropdownToggle, Badge } from "reactstrap"
 
 export default class Navi extends Component {
     render() {
@@ -43,16 +43,13 @@ export default class Navi extends Component {
                                     Options
                                 </DropdownToggle>
                                 <DropdownMenu right>
-                                    <DropdownItem>
-                                        Option 1
-                                    </DropdownItem>
-                                    <DropdownItem>
-                                        Option 2
-                                    </DropdownItem>
-                                    <DropdownItem divider />
-                                    <DropdownItem>
-                                        Reset
-                                    </DropdownItem>
+                                    {
+                                        this.props.carts.map(cart => {
+                                            return <DropdownItem>
+                                                {cart.product.productName} <Badge color='primary'>{cart.quantity}</Badge>
+                                            </DropdownItem>
+                                        })
+                                    }
                                 </DropdownMenu>
                             </UncontrolledDropdown>
                         </Nav>
