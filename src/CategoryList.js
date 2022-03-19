@@ -17,13 +17,12 @@ export default class CategoryList extends Component {
         return (
             <div>
                 <h3>{this.props.info.title}</h3>
-                <h3>{this.state.counter}</h3>
                 <ListGroup>
-                    <ListGroupItem>1</ListGroupItem>
-                    <ListGroupItem>2</ListGroupItem>
-                    <ListGroupItem>3</ListGroupItem>
-                    <ListGroupItem>4</ListGroupItem>
-                    <ListGroupItem>5</ListGroupItem>
+                    {
+                        this.state.categories.map(category=>{
+                            return <ListGroupItem key={category.categoryId}>{category.categoryName}</ListGroupItem>
+                        })
+                    }
                 </ListGroup>
             </div>
         )
