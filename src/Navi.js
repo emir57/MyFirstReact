@@ -14,12 +14,12 @@ export default class Navi extends Component {
                     className='mb-3'
                 >
                     <NavbarBrand href="/">
-                        reactstrap
+                        Northwind App
                     </NavbarBrand>
                     <NavbarToggler onClick={function noRefCheck() { }} />
                     <Collapse navbar>
                         <Nav
-                            className="me-auto"
+                            className="mx-auto"
                             navbar
                         >
                             <NavItem>
