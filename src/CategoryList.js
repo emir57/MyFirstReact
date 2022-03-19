@@ -10,7 +10,8 @@ export default class CategoryList extends Component {
                 {categoryId:2,categoryName:"Condiments"},
                 {categoryId:3,categoryName:"Chocolates"},
                 {categoryId:4,categoryName:"Foods"},
-            ]
+            ],
+            currentCategory:""
         };
     }
     render() {
@@ -24,6 +25,7 @@ export default class CategoryList extends Component {
                         })
                     }
                 </ListGroup>
+                <h4>{this.state.currentCategory}</h4>
             </div>
         )
     }
