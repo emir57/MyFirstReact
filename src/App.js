@@ -9,13 +9,16 @@ export default class App extends Component {
     currentCategory: "",
     products: []
   }
+  componentDidMount(){
+    this.getProducts();
+  }
   changeCategory = (category) => {
     this.setState({ currentCategory: category.categoryName });
   }
   getProducts = () => {
     fetch("http://localhost:3000/products")
       .then(response => response.json())
-      .then(data => this.setState({ products: data }));
+      .then(data =>this.setState({ products: data }));
   }
   render() {
     let productInfo = {

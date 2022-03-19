@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import { Table } from 'reactstrap';
 
 export default class ProductList extends Component {
-    state = {
-        products: []
-    }
     render() {
         return (
             <div>
@@ -22,7 +19,16 @@ export default class ProductList extends Component {
                     </thead>
                     <tbody>
                         {
-
+                            this.props.products.map(product => {
+                                return <tr key={product.id}>
+                                    <td>{product.id}</td>
+                                    <td>{product.categoryId}</td>
+                                    <td>{product.productName}</td>
+                                    <td>{product.quantityPerUnit}</td>
+                                    <td>{product.unitPrice}</td>
+                                    <td>{product.unitsInStock}</td>
+                                </tr>
+                            })
                         }
                     </tbody>
                 </Table>
