@@ -7,7 +7,14 @@ import ProductList from "./ProductList";
 export default class App extends Component {
   state = {
     currentCategory: "",
-    products: []
+    products: [],
+    carts: []
+  }
+  addToCart = (product) => {
+    let newCard = this.state.carts;
+    //var addedItem = newCard.find(x=>x.product.id === product.id);
+    newCard.push({ product: product, quantity: 1 });
+    this.setState({ carts: newCard });
   }
   componentDidMount() {
     this.getProducts();
@@ -37,7 +44,7 @@ export default class App extends Component {
       <div>
         <Container>
           {/* <Row className="mb-2"> */}
-            <Navi />
+          <Navi />
           {/* </Row> */}
           <Row>
             <Col xs="3">
@@ -48,6 +55,7 @@ export default class App extends Component {
             </Col>
             <Col xs="9">
               <ProductList
+                addToCart={this.addToCart}
                 products={this.state.products}
                 currentCategory={this.state.currentCategory}
                 info={productInfo} />
