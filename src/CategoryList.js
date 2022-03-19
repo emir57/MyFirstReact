@@ -14,9 +14,7 @@ export default class CategoryList extends Component {
             currentCategory: ""
         };
     }
-    changeCategory = (category) => {
-        this.setState({ currentCategory: category.categoryName });
-    }
+    
     render() {
         return (
             <div>
