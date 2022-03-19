@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Table } from 'reactstrap';
 
 export default class ProductList extends Component {
-    constructor(props){
-        super(props);
+    state = {
+        products:[]
     }
     render() {
         return (
@@ -20,7 +20,7 @@ export default class ProductList extends Component {
                     </thead>
                     <tbody>
                         {
-                            
+
                         }
                     </tbody>
                 </Table>
