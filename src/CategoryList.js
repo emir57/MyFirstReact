@@ -21,7 +21,7 @@ export default class CategoryList extends Component {
                 <ListGroup>
                     {
                         this.state.categories.map(category=>{
-                            return <ListGroupItem key={category.categoryId}>{category.categoryName}</ListGroupItem>
+                            return <ListGroupItem onClick={()=>this.setState({currentCategory:category.categoryName})} key={category.categoryId}>{category.categoryName}</ListGroupItem>
                         })
                     }
                 </ListGroup>
