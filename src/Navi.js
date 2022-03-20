@@ -21,7 +21,7 @@ export default class Navi extends Component {
                     <NavbarToggler onClick={function noRefCheck() { }} />
                     <Collapse navbar>
                         <Nav
-                            className="mx-auto"
+                            className="ms-auto"
                             navbar
                         >
                             <NavItem>
