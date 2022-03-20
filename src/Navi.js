@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Nav, Navbar, DropdownMenu, NavbarToggler, Collapse, NavItem, NavLink, NavbarText, NavbarBrand, DropdownItem, UncontrolledDropdown, DropdownToggle, Badge } from "reactstrap"
+import { Nav, Navbar, NavbarToggler, Collapse, NavItem, NavLink, NavbarText, NavbarBrand } from "reactstrap"
+import CartSummary from './CartSummary'
 
 export default class Navi extends Component {
     getCarts = () => {
@@ -37,28 +38,7 @@ export default class Navi extends Component {
                                     GitHub
                                 </NavLink>
                             </NavItem>
-                            <UncontrolledDropdown
-                                inNavbar
-                                nav
-                            >
-                                <DropdownToggle
-                                    caret
-                                    nav
-                                >
-                                    Sepetim <Badge color='info'>{this.props.carts.length}</Badge>
-                                </DropdownToggle>
-                                <DropdownMenu right>
-                                    {
-                                        this.props.carts.length > 0 ?
-                                            this.props.carts.map(cart => {
-                                                return <DropdownItem key={cart.product.id}>
-                                                    {cart.product.productName} <Badge color='primary'>{cart.quantity}</Badge>
-                                                </DropdownItem>
-                                            }):
-                                            this.getCarts()
-                                    }
-                                </DropdownMenu>
-                            </UncontrolledDropdown>
+                            <CartSummary />
                         </Nav>
                         <NavbarText>
                             Simple Text
