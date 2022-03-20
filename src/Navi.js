@@ -1,3 +1,4 @@
+import { getValue } from '@testing-library/user-event/dist/utils'
 import React, { Component } from 'react'
 import { Nav, Navbar, NavbarToggler, Collapse, NavItem, NavLink, NavbarText, NavbarBrand } from "reactstrap"
 import CartSummary from './CartSummary'
@@ -11,7 +12,7 @@ export default class Navi extends Component {
                     color="light"
                     expand="md"
                     fixed=""
-                    full
+                    
                     light
                     className='mb-3'
                 >
@@ -21,8 +22,7 @@ export default class Navi extends Component {
                     <NavbarToggler onClick={function noRefCheck() { }} />
                     <Collapse navbar>
                         <Nav
-                            className="ms-auto"
-                            navbar
+                            className="ms-auto" navbar
                         >
                             <NavItem>
                                 <NavLink href="/components/">
