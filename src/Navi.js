@@ -3,11 +3,7 @@ import { Nav, Navbar, NavbarToggler, Collapse, NavItem, NavLink, NavbarText, Nav
 import CartSummary from './CartSummary'
 
 export default class Navi extends Component {
-    getCarts = () => {
-        if (this.props.carts.length == 0) {
-            return "Sepetinzde Ürün Yok"
-        }
-    }
+    
     render() {
         return (
             <div>
@@ -38,7 +34,7 @@ export default class Navi extends Component {
                                     GitHub
                                 </NavLink>
                             </NavItem>
-                            <CartSummary />
+                            <CartSummary carts = {this.props.carts}/>
                         </Nav>
                         <NavbarText>
                             Simple Text

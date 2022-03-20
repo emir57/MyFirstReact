@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import { DropdownMenu, DropdownItem, UncontrolledDropdown, DropdownToggle, Badge } from "reactstrap"
 
 export default class CartSummary extends Component {
+    getCarts = () => {
+        if (this.props.carts.length == 0) {
+            return "Sepetinzde Ürün Yok"
+        }
+    }
     render() {
         return (
             <div>
