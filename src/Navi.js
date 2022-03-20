@@ -34,7 +34,7 @@ export default class Navi extends Component {
                                     GitHub
                                 </NavLink>
                             </NavItem>
-                            <CartSummary carts = {this.props.carts}/>
+                            <CartSummary removeFromCart={this.props.removeFromCart} carts = {this.props.carts}/>
                         </Nav>
                         <NavbarText>
                             Simple Text

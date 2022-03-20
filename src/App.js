@@ -59,7 +59,7 @@ export default class App extends Component {
       <div>
         <Container>
           {/* <Row className="mb-2"> */}
-          <Navi carts={this.state.carts} />
+          <Navi removeFromCart={this.removeFromCart} carts={this.state.carts} />
           {/* </Row> */}
           <Row>
             <Col xs="3">
