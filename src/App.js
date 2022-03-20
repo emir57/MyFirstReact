@@ -20,7 +20,7 @@ export default class App extends Component {
       newCart.push({ product: product, quantity: 1 });
     }
     this.setState({ carts: newCart });
-    
+    alertify.notify(product.productName+" Sepete Eklendi","success",5);
   }
   removeFromCart = (product)=>{
     let currentCarts = this.state.carts;
