@@ -11,14 +11,14 @@ export default class App extends Component {
     carts: []
   }
   addToCart = (product) => {
-    let newCard = this.state.carts;
-    var addedItem = newCard.find(x => x.product.id === product.id);
+    let newCart = this.state.carts;
+    var addedItem = newCart.find(x => x.product.id === product.id);
     if (addedItem) {
       addedItem.quantity = addedItem.quantity + 1
     } else {
-      newCard.push({ product: product, quantity: 1 });
+      newCart.push({ product: product, quantity: 1 });
     }
-    this.setState({ carts: newCard });
+    this.setState({ carts: newCart });
   }
   removeFromCart = (product)=>{
     let currentCarts = this.state.carts;
