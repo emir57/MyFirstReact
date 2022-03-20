@@ -18,7 +18,7 @@ export default class CartSummary extends Component {
             >
                 Sepetim <Badge color='info'>{this.props.carts.length}</Badge>
             </DropdownToggle>
-            <DropdownMenu right>
+            <DropdownMenu end>
                 {
                     this.props.carts.length > 0 ?
                         this.props.carts.map(cart => {
