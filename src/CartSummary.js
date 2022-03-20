@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { DropdownMenu, DropdownItem, UncontrolledDropdown, DropdownToggle, Badge } from "reactstrap"
+import { DropdownMenu, DropdownItem, UncontrolledDropdown, DropdownToggle, Badge, NavItem, NavLink } from "reactstrap"
 
 export default class CartSummary extends Component {
     getCarts = () => {
@@ -30,12 +30,18 @@ export default class CartSummary extends Component {
                 }
             </DropdownMenu>
         </UncontrolledDropdown>
-        );}
+        );
+    }
+    renderEmptyCart() {
+        return <NavItem>
+            <NavLink>Empty Cart</NavLink>
+        </NavItem>
+    }
     render() {
         return (
             <div>
                 {
-                    this.props.carts.length>0?this.renderSummary():<div></div>
+                    this.props.carts.length > 0 ? this.renderSummary() : this.renderEmptyCart()
                 }
             </div>
         )
