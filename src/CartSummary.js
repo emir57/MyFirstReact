@@ -35,7 +35,7 @@ export default class CartSummary extends Component {
         return (
             <div>
                 {
-                    this.props.carts.length>0?this.renderSummary():""
+                    this.props.carts.length>0?this.renderSummary():<div></div>
                 }
             </div>
         )
