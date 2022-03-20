@@ -22,8 +22,12 @@ export default class CartSummary extends Component {
                 {
                     this.props.carts.length > 0 ?
                         this.props.carts.map(cart => {
-                            return <DropdownItem onClick={()=>this.props.removeFromCart(cart.product)} key={cart.product.id}>
-                                {cart.product.productName} <Badge color='primary'>{cart.quantity}</Badge>
+                            return <DropdownItem key={cart.product.id}>
+                                <Badge color='danger' onClick={()=>this.props.removeFromCart(cart.product)}>
+                                    X
+                                </Badge>&nbsp; 
+                                {cart.product.productName} &nbsp;
+                                <Badge color='primary'>{cart.quantity}</Badge>
                             </DropdownItem>
                         }) :
                         this.getCarts()
