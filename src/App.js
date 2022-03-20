@@ -18,8 +18,18 @@ export default class App extends Component {
     } else {
       newCard.push({ product: product, quantity: 1 });
     }
-
     this.setState({ carts: newCard });
+  }
+  removeFromCart = (product)=>{
+    let currentCarts = this.state.carts;
+    var cart = this.state.carts.find(x=>x.product.id === product.id);
+    let index = this.state.carts.findIndex(x=>x.product.id === product.id);
+    if(cart.quantity == 1){
+      currentCarts.splice(index,1);
+    }else{
+      currentCarts[index].quantity -=1;
+    }
+    this.setState({carts:currentCarts})
   }
   componentDidMount() {
     this.getProducts();
