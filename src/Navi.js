@@ -26,8 +26,8 @@ export default class Navi extends Component {
                             className="ms-auto" navbar
                         >
                             <NavItem>
-                                <NavLink href="/form">
-                                    Form
+                                <NavLink>
+                                    <Link style={{textDecoration:"none"}} to="/form">Form</Link>
                                 </NavLink>
                             </NavItem>
                             <NavItem>
