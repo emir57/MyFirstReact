@@ -8,8 +8,9 @@ export default class Form1Demo extends Component {
     onChangeHandler = (event)=>{
         this.setState({userName:event.target.value})
     }
-    onSubmitHandler = ()=>{
-
+    onSubmitHandler = (event)=>{
+        event.preventDefault();
+        alert(this.state.userName)
     }
     render() {
         return (
