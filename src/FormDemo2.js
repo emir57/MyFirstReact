@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import alertify from 'alertifyjs'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 
 export default class FormDemo2 extends Component {
@@ -13,10 +14,16 @@ export default class FormDemo2 extends Component {
         let value = event.target.value;
         this.setState({[name]:value});
     }
+    handleSubmit = event =>{
+        event.preventDefault();
+        alertify.notify(`${this.state.email} added tı db!`,"info",2);
+    }
     render() {
         return (
             <div>
-
+                <Form onSubmit={this.handleSubmit}>
+                    
+                </Form>
             </div>
         )
     }
