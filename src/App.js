@@ -6,6 +6,7 @@ import ProductList from "./ProductList";
 import alertify from "alertifyjs";
 import { Route, Router, Routes } from "react-router-dom";
 import NotFound from "./NotFound";
+import CartList from "./CartList";
 
 export default class App extends Component {
   state = {
@@ -74,6 +75,7 @@ export default class App extends Component {
             <Col xs="9">
               <Routes>
                 <Route path="/" element={<NotFound />} />
+                <Route path="/cart" element={<CartList />} />
               </Routes>
 
 
