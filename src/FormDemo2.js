@@ -4,10 +4,16 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 
 export default class FormDemo2 extends Component {
     state = {
+        cities:[],
         email: '',
         password: '',
         city: '',
         description: ''
+    }
+    getCities = ()=>{
+        fetch("http://localhost:3000/cities")
+        .then(response=>response.json())
+        .then(data=>this.setState({cities:data}));
     }
     handleChange = event => {
         let name = event.target.name;
@@ -33,6 +39,12 @@ export default class FormDemo2 extends Component {
                     <FormGroup mb-3>
                         <Label for='description'>Description</Label>
                         <Input onChange={this.handleChange} name='description' id='description' placeholder='Enter Description' type='textarea'></Input>
+                    </FormGroup>
+                    <FormGroup mb-3>
+                        <Label for='city'>City</Label>
+                        <Input onChange={this.handleChange} name='city' id='city' type='select'>
+                            <option>Ankara</option>
+                        </Input>
                     </FormGroup>
 
                 </Form>
