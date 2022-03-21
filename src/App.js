@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Container, Row } from "reactstrap";
+import { Col, Container, Form, Row } from "reactstrap";
 import CategoryList from "./CategoryList";
 import Navi from "./Navi";
 import ProductList from "./ProductList";
@@ -7,6 +7,7 @@ import alertify from "alertifyjs";
 import { Route, Router, Routes } from "react-router-dom";
 import NotFound from "./NotFound";
 import CartList from "./CartList";
+import Form1Demo from "./Form1Demo";
 
 export default class App extends Component {
   state = {
@@ -88,6 +89,7 @@ export default class App extends Component {
                   removeFromCart={this.removeFromCart}
                 />
                 } />
+                <Route path="/form" element={<Form1Demo></Form1Demo>}></Route>
                 <Route element={<NotFound/>} />
               </Routes>
             </Col>
