@@ -1,5 +1,6 @@
 import { getValue } from '@testing-library/user-event/dist/utils'
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { Nav, Navbar, NavbarToggler, Collapse, NavItem, NavLink, NavbarText, NavbarBrand } from "reactstrap"
 import CartSummary from './CartSummary'
 
@@ -25,8 +26,8 @@ export default class Navi extends Component {
                             className="ms-auto" navbar
                         >
                             <NavItem>
-                                <NavLink href="/components/">
-                                    Components
+                                <NavLink href="/form">
+                                    Form
                                 </NavLink>
                             </NavItem>
                             <NavItem>

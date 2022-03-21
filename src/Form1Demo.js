@@ -13,7 +13,7 @@ export default class Form1Demo extends Component {
             <div>
                 <Form>
                     <h3>User Name</h3>
-                    <input onChange={this.onChangeHandle} type="text"></input>
+                    <input onChange={this.onChangeHandler} type="text"></input>
                     <h3>User Name is {this.state.userName}</h3>
                 </Form>
             </div>
