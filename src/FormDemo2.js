@@ -13,6 +13,15 @@ export default class FormDemo2 extends Component {
         city: '',
         description: ''
     }
+    citiesOptionsRender(){
+        return (
+            this.state.cities.map(city=>{
+                return <option key={city.id} value={city.cityName}>
+                    {city.cityName}
+                </option>
+            })
+        );
+    }
     getCities = ()=>{
         fetch("http://localhost:3000/cities")
         .then(response=>response.json())
