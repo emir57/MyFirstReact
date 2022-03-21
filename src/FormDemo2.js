@@ -3,6 +3,9 @@ import alertify from 'alertifyjs'
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 
 export default class FormDemo2 extends Component {
+    componentDidMount(){
+        this.getCities()
+    }
     state = {
         cities:[],
         email: '',
