@@ -84,7 +84,7 @@ export default class App extends Component {
                 <Route exact path="/cart" element={
                 <CartList 
                   cart={this.state.carts}
-                  removeFromCart={this.state.removeFromCart}
+                  removeFromCart={this.removeFromCart}
                 />
                 } />
                 <Route element={<NotFound/>} />
