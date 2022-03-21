@@ -22,7 +22,8 @@ export default class FormDemo2 extends Component {
         return (
             <div>
                 <Form onSubmit={this.handleSubmit}>
-                    
+                    <Label for='email'>Email</Label>
+                    <Input name='email' type='email'></Input>
                 </Form>
             </div>
         )
