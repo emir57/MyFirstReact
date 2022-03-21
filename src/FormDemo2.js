@@ -30,6 +30,10 @@ export default class FormDemo2 extends Component {
                         <Label for='password'>Password</Label>
                         <Input onChange={this.handleChange} name='password' id='password' placeholder='Enter Password' type='password'></Input>
                     </FormGroup>
+                    <FormGroup mb-3>
+                        <Label for='description'>Description</Label>
+                        <Input onChange={this.handleChange} name='description' id='description' placeholder='Enter Description' type='textarea'></Input>
+                    </FormGroup>
 
                 </Form>
             </div>
