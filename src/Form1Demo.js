@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { Form } from 'reactstrap'
+import { Form, FormGroup,FormControl } from 'reactstrap'
 
 export default class Form1Demo extends Component {
     state = {
-        userName:''
+        userName: ''
     }
-    onChangeHandler = (event)=>{
-        this.setState({userName:event.target.value})
+    onChangeHandler = (event) => {
+        this.setState({ userName: event.target.value })
     }
-    onSubmitHandler = (event)=>{
+    onSubmitHandler = (event) => {
         event.preventDefault();
         alert(this.state.userName)
     }
@@ -17,7 +17,7 @@ export default class Form1Demo extends Component {
             <div>
                 <Form onSubmit={this.onSubmitHandler}>
                     <h3>User Name</h3>
-                    <input onChange={this.onChangeHandler} type="text"></input>
+                    <input className='form-control' onChange={this.onChangeHandler} type="text"></input>
                     <h3>User Name is {this.state.userName}</h3>
                     <input type="submit" value="Save"></input>
                 </Form>
