@@ -23,7 +23,7 @@ export default class FormDemo2 extends Component {
             <div>
                 <Form onSubmit={this.handleSubmit}>
                     <Label for='email'>Email</Label>
-                    <Input name='email' type='email'></Input>
+                    <Input onChange={this.handleChange} name='email' id='email' placeholder='Enter Email' type='email'></Input>
                 </Form>
             </div>
         )
