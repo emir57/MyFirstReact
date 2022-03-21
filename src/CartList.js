@@ -18,7 +18,7 @@ export default class CartList extends Component {
                     <tbody>
                         {
                             this.props.cart.map(cart=>{
-                                return <tr>
+                                return <tr key={cart.product.id}>
                                     <td>{cart.product.id}</td>
                                     <td>{cart.product.categoryId}</td>
                                     <td>{cart.product.productName}</td>
@@ -35,7 +35,7 @@ export default class CartList extends Component {
     render() {
         return (
             <div>
-                
+                {this.renderCart()}
             </div>
         )
     }
