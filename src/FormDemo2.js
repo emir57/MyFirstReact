@@ -40,22 +40,22 @@ export default class FormDemo2 extends Component {
         return (
             <div>
                 <Form onSubmit={this.handleSubmit}>
-                    <FormGroup mb-3>
+                    <FormGroup mb-3="true">
                         <Label for='email'>Email</Label>
                         <Input onChange={this.handleChange} name='email' id='email' placeholder='Enter Email' type='email'></Input>
                     </FormGroup>
-                    <FormGroup mb-3>
+                    <FormGroup mb-3="true">
                         <Label for='password'>Password</Label>
                         <Input onChange={this.handleChange} name='password' id='password' placeholder='Enter Password' type='password'></Input>
                     </FormGroup>
-                    <FormGroup mb-3>
+                    <FormGroup mb-3="true">
                         <Label for='description'>Description</Label>
                         <Input onChange={this.handleChange} name='description' id='description' placeholder='Enter Description' type='textarea'></Input>
                     </FormGroup>
-                    <FormGroup mb-3>
+                    <FormGroup mb-3="true">
                         <Label for='city'>City</Label>
                         <Input onChange={this.handleChange} name='city' id='city' type='select'>
-                            <option>Ankara</option>
+                            {this.citiesOptionsRender()}
                         </Input>
                     </FormGroup>
 
