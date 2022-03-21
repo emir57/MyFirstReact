@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
-import { Form, FormGroup,FormControl } from 'reactstrap'
 
-export default class Form1Demo extends Component {
+export default class FormDemo1 extends Component {
     state = {
         userName: '',
-        city:''
+        city: ''
     }
     onChangeHandler = (event) => {
         let name = event.target.name;
         let value = event.target.value;
-        this.setState({[name]:value})
+        this.setState({ [name]: value })
     }
     onSubmitHandler = (event) => {
         event.preventDefault();
@@ -32,3 +31,4 @@ export default class Form1Demo extends Component {
         )
     }
 }
+
