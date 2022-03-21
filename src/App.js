@@ -89,7 +89,8 @@ export default class App extends Component {
                   removeFromCart={this.removeFromCart}
                 />
                 } />
-                <Route path="/form" element={<FormDemo1></FormDemo1>}></Route>
+                <Route path="/form1" element={<FormDemo1></FormDemo1>}></Route>
+                <Route path="/form2" element={<FormDemo1></FormDemo1>}></Route>
                 <Route element={<NotFound/>} />
               </Routes>
             </Col>
