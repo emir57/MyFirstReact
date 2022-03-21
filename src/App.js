@@ -4,6 +4,8 @@ import CategoryList from "./CategoryList";
 import Navi from "./Navi";
 import ProductList from "./ProductList";
 import alertify from "alertifyjs";
+import { Route, Router, Routes } from "react-router-dom";
+import NotFound from "./NotFound";
 
 export default class App extends Component {
   state = {
@@ -20,17 +22,17 @@ export default class App extends Component {
       newCart.push({ product: product, quantity: 1 });
     }
     this.setState({ carts: newCart });
-    alertify.notify(product.productName+" Sepete Eklendi","success",5);
+    alertify.notify(product.productName + " Sepete Eklendi", "success", 5);
   }
-  removeFromCart = (product)=>{
+  removeFromCart = (product) => {
     let currentCarts = this.state.carts;
-    let index = this.state.carts.findIndex(x=>x.product.id === product.id);
-    if(currentCarts[index].quantity == 1){
-      currentCarts.splice(index,1);
-    }else{
-      currentCarts[index].quantity -=1;
+    let index = this.state.carts.findIndex(x => x.product.id === product.id);
+    if (currentCarts[index].quantity == 1) {
+      currentCarts.splice(index, 1);
+    } else {
+      currentCarts[index].quantity -= 1;
     }
-    this.setState({carts:currentCarts})
+    this.setState({ carts: currentCarts })
   }
   componentDidMount() {
     this.getProducts();
@@ -70,11 +72,16 @@ export default class App extends Component {
                 info={categoryInfo} />
             </Col>
             <Col xs="9">
-              <ProductList
+              <Routes>
+                <Route path="/" element={<NotFound />} />
+              </Routes>
+
+
+              {/* <ProductList
                 addToCart={this.addToCart}
                 products={this.state.products}
                 currentCategory={this.state.currentCategory}
-                info={productInfo} />
+                info={productInfo} /> */}
             </Col>
           </Row>
         </Container>
