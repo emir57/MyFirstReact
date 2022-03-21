@@ -27,7 +27,7 @@ export default class Navi extends Component {
                         >
                             <NavItem>
                                 <NavLink>
-                                    <Link style={{textDecoration:"none"}} to="/form">Form</Link>
+                                    <Link style={{textDecoration:"none"}} to="/form1">Form1</Link>
                                 </NavLink>
                             </NavItem>
                             <NavItem>
