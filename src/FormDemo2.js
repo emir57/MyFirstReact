@@ -34,7 +34,7 @@ export default class FormDemo2 extends Component {
     }
     handleSubmit = event => {
         event.preventDefault();
-        alertify.notify(`${this.state.email} added tı db!`, "info", 2);
+        alertify.notify(`${this.state.email} added to db!`, "info", 2);
     }
     render() {
         return (
@@ -58,7 +58,7 @@ export default class FormDemo2 extends Component {
                             {this.citiesOptionsRender()}
                         </Input>
                     </FormGroup>
-
+                    <Input type='submit' value={"Save"}></Input>
                 </Form>
             </div>
         )
