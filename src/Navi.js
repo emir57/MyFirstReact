@@ -5,7 +5,7 @@ import { Nav, Navbar, NavbarToggler, Collapse, NavItem, NavLink, NavbarText, Nav
 import CartSummary from './CartSummary'
 
 export default class Navi extends Component {
-    
+
     render() {
         return (
             <div>
@@ -13,7 +13,7 @@ export default class Navi extends Component {
                     color="light"
                     expand="md"
                     fixed=""
-                    
+
                     light
                     className='mb-3'
                 >
@@ -27,7 +27,12 @@ export default class Navi extends Component {
                         >
                             <NavItem>
                                 <NavLink>
-                                    <Link style={{textDecoration:"none"}} to="/form1">Form1</Link>
+                                    <Link style={{ textDecoration: "none" }} to="/form1">Form1</Link>
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink>
+                                    <Link style={{ textDecoration: "none" }} to="/form2">Form2</Link>
                                 </NavLink>
                             </NavItem>
                             <NavItem>
@@ -35,7 +40,7 @@ export default class Navi extends Component {
                                     GitHub
                                 </NavLink>
                             </NavItem>
-                            <CartSummary removeFromCart={this.props.removeFromCart} carts = {this.props.carts}/>
+                            <CartSummary removeFromCart={this.props.removeFromCart} carts={this.props.carts} />
                         </Nav>
                         <NavbarText>
                             Simple Text
