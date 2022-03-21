@@ -22,9 +22,13 @@ export default class FormDemo2 extends Component {
         return (
             <div>
                 <Form onSubmit={this.handleSubmit}>
-                    <FormGroup>
+                    <FormGroup mb-3>
                         <Label for='email'>Email</Label>
                         <Input onChange={this.handleChange} name='email' id='email' placeholder='Enter Email' type='email'></Input>
+                    </FormGroup>
+                    <FormGroup mb-3>
+                        <Label for='password'>Password</Label>
+                        <Input onChange={this.handleChange} name='password' id='password' placeholder='Enter Password' type='password'></Input>
                     </FormGroup>
 
                 </Form>
