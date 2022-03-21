@@ -34,6 +34,7 @@ export default class App extends Component {
       currentCarts[index].quantity -= 1;
     }
     this.setState({ carts: currentCarts })
+    alertify.notify(product.productName+" Sepetten Silindi","error",3);
   }
   componentDidMount() {
     this.getProducts();
