@@ -26,7 +26,7 @@ export default class Form1Demo extends Component {
                     <h3>City</h3>
                     <input name='city' className='form-control' onChange={this.onChangeHandler} type="text"></input>
                     <h3>City is {this.state.city}</h3>
-                    <input type="submit" value="Save"></input>
+                    <input className='btn btn-primary' type="submit" value="Save"></input>
                 </Form>
             </div>
         )
