@@ -35,6 +35,9 @@ export default class FormDemo2 extends Component {
     handleSubmit = event => {
         event.preventDefault();
         alertify.notify(`${this.state.email} added to db!`, "info", 2);
+        alertify.notify(`${this.state.password} added to db!`, "info", 2);
+        alertify.notify(`${this.state.description} added to db!`, "info", 2);
+        alertify.notify(`${this.state.city} added to db!`, "info", 2);
     }
     render() {
         return (
