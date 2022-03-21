@@ -12,18 +12,21 @@ export default class FormDemo2 extends Component {
     handleChange = event => {
         let name = event.target.name;
         let value = event.target.value;
-        this.setState({[name]:value});
+        this.setState({ [name]: value });
     }
-    handleSubmit = event =>{
+    handleSubmit = event => {
         event.preventDefault();
-        alertify.notify(`${this.state.email} added tı db!`,"info",2);
+        alertify.notify(`${this.state.email} added tı db!`, "info", 2);
     }
     render() {
         return (
             <div>
                 <Form onSubmit={this.handleSubmit}>
-                    <Label for='email'>Email</Label>
-                    <Input onChange={this.handleChange} name='email' id='email' placeholder='Enter Email' type='email'></Input>
+                    <FormGroup>
+                        <Label for='email'>Email</Label>
+                        <Input onChange={this.handleChange} name='email' id='email' placeholder='Enter Email' type='email'></Input>
+                    </FormGroup>
+
                 </Form>
             </div>
         )
